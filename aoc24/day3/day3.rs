@@ -4,17 +4,17 @@ fn main() {
     let mut result2 = 0;
     let mut take = true;
     for line in input.lines() {
-        let mut remainingString: String = line.clone().chars().collect();
-        let v:Vec<_>  = remainingString.match_indices("mul(").map(|(i,_)| i).collect();
-        let dont:Vec<_> = remainingString.match_indices("don't()").map(|(i, _)|i).collect();
-        let dos:Vec<_> = remainingString.match_indices("do()").map(|(i, _)|i).collect();
+        let mut corruptedData: String = line.clone().chars().collect();
+        let v:Vec<_>  = corruptedData.match_indices("mul(").map(|(i,_)| i).collect();
+        let dont:Vec<_> = corruptedData.match_indices("don't()").map(|(i, _)|i).collect();
+        let dos:Vec<_> = corruptedData.match_indices("do()").map(|(i, _)|i).collect();
         for occurence in &v {
             let begin = occurence+3;
             let mut character = '(';
             let mut offset = 0;
             let mut mult = String::from("");
             while character != ')' {
-                if let Some(ok) = remainingString.chars().nth(begin+offset) {
+                if let Some(ok) = corruptedData.chars().nth(begin+offset) {
                     character = ok;
                 }
                 else {
@@ -38,7 +38,7 @@ fn main() {
                 let mut offset = 0;
                 let mut mult = String::from("");
                 while character != ')' {
-                    if let Some(ok) = remainingString.chars().nth(begin+offset) {
+                    if let Some(ok) = corruptedData.chars().nth(begin+offset) {
                         character = ok;
                     }
                     else {
@@ -51,8 +51,8 @@ fn main() {
             }
         }
     }
-    println!("{}", result);
-    println!("{}", result2);
+    println!("Part 1 = {}", result);
+    println!("Part 2 = {}", result2);
 }
 
 fn calculateMult(s: &String) -> u32 {
