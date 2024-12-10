@@ -31,7 +31,7 @@ fn main() {
             while i < rules.len() {
                 let mut r = &rules[i];
                 if ordering.contains(&r[0]) && ordering.contains(&r[1]) && wrong {
-                    let index = ordering.iter().position(|j| *j == r[0]).unwrap();
+                    let index1 = ordering.iter().position(|j| *j == r[0]).unwrap();
                     let index2 = ordering.iter().position(|j| *j == r[1]).unwrap();
                     if index2 < index1 {
                         let mut store = String::from("0");
