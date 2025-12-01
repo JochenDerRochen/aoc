@@ -2,5 +2,6 @@ Cargo*
 target/
 *
 !*/
+!*.go
 !*.rs
 !*.cpp
