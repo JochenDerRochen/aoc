@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/bartusek/develop/personal/aoc/aoc20/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
